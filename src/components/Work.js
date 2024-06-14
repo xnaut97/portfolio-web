@@ -1,4 +1,4 @@
-import { CgCode, CgEye, CgEyeAlt } from "react-icons/cg";
+import { CgCode, CgEye } from "react-icons/cg";
 import Navbar from "./Navbar"
 import React, { useState } from 'react';
 import Utils from "./Utils";
@@ -16,7 +16,7 @@ function Work() {
     }
 
     const getButton = (icon, name, link) => {
-        return <a href="" className="px-4 py-1.5 rounded-sm text-sm font-medium text-white bg-neutral-800 
+        return <a href="#/" className="px-4 py-1.5 rounded-sm text-sm font-medium text-white bg-neutral-800 
                                 hover:bg-blue-500 hover:shadow-md hover:shadow-neutral-500"
             onClick={() => Utils.openURL(link)}>
             {getIcon(icon)} {name}
