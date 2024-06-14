@@ -1,6 +1,4 @@
-import Logo from "./Logo"
 import React, { useState, useEffect } from 'react';
-import { CgMenu } from "react-icons/cg";
 
 const Navbar = () => {
     const [activeItem, setActiveItem] = useState(

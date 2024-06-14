@@ -1,7 +1,6 @@
 import { CgCode, CgEye, CgEyeAlt } from "react-icons/cg";
 import Navbar from "./Navbar"
 import React, { useState } from 'react';
-import { CodeNode } from "three/examples/jsm/nodes/Nodes.js";
 import Utils from "./Utils";
 
 
