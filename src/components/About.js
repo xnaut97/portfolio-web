@@ -2,12 +2,9 @@ import Navbar from "./Navbar"
 import { GoChevronDown, GoChevronRight } from "react-icons/go";
 import React, { useState } from 'react';
 import { TypeAnimation } from "react-type-animation";
-import wallpaper from '../resources/wallpaper.jpg'
 
 function Home() {
     const [isHovered, setHovered] = useState(false);
-
-    const [role, changeRole] = useState('Plugin');
 
     const getArrow = () => {
         return <div className="inline-block align-middle">
