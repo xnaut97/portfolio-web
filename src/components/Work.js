@@ -41,7 +41,7 @@ function Work() {
                         <a href="#/" className="px-4 font-bold font-montserrat text-white text-xl">{name}</a>
                     </div>
                     <div className="absolute w-full h-20 bottom-16 flex justify-start items-start pt-1 pb-1 space-x-10 bg-white bg-opacity-75 overflow-y-auto no-scrollbar">
-                        <a href="#" className="flex px-4 space-y-1 font-medium font-montserrat text-neutral-700 text-sm text-wrap"
+                        <a href="#/" className="flex px-4 space-y-1 font-medium font-montserrat text-neutral-700 text-sm text-wrap"
                             style={{ whiteSpace: "pre-line" }}>
                             {description}
                         </a>
