@@ -22,12 +22,6 @@ function Home() {
         </div>
     }
 
-    const Role = () => {
-        return <div className="text-blue-500">
-            I am into {role} Developer
-        </div>
-    }
-
     return <div>
         <Navbar />
         <div className="z-2 flex w-full h-screen m-auto items-center justify-center lg:px-60 bg-violet-950">
