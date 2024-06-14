@@ -34,10 +34,10 @@ function Home() {
                         ">
                             Hi there,
                         </li>
-                        <li className="text-4xl text-center px-4 md:text-6xl lg:text-8xl font-semibold">
+                        <li className="text-4xl text-center px-4 sm:text-5xl md:text-7xl lg:text-8xl font-semibold">
                             I'm <Name />
                         </li>
-                        <div className="text-lg font-medium text-left pt-2 px-14">
+                        <div className="text-lg sm:text-xl md:text-2xl font-medium text-left pt-2 px-14 m">
                             I am into {' '}
                             <TypeAnimation
                                 preRenderFirstString={true}

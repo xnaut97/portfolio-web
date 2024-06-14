@@ -9,6 +9,10 @@ const Navbar = () => {
 
     useEffect(() => {
         localStorage.setItem('activeItem', activeItem);
+
+        window.addEventListener("beforeunload", function (e) {
+            this.localStorage.setItem('activeItem', null);
+        });
     }, [activeItem]);
 
     const handleItemClick = (item) => {
