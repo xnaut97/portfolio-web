@@ -5,8 +5,6 @@ const Navbar = () => {
         localStorage.getItem('activeItem') || '/'
     );
 
-    var location = window.location.pathname.toString();
-
     const [hidden, setHidden] = useState(true);
 
     const handleClick = (id) => {
