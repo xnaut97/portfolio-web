@@ -30,14 +30,14 @@ function Home() {
                     <div className="animate-slidein">
                         <li className="
                             text-left text-2xl font-medium
-                            px-14
+                            px-14 sm:px-20 md:px-4
                         ">
                             Hi there,
                         </li>
                         <li className="text-4xl text-center px-4 sm:text-5xl md:text-7xl lg:text-8xl font-semibold">
                             I'm <Name />
                         </li>
-                        <div className="text-lg sm:text-xl md:text-2xl font-medium text-left pt-2 px-14 m">
+                        <div className="text-lg sm:text-xl md:text-2xl font-medium text-left pt-2 px-14 sm:px-20 md:px-4">
                             I am into {' '}
                             <TypeAnimation
                                 preRenderFirstString={true}
@@ -53,8 +53,9 @@ function Home() {
                         </div>
                     </div>
                     <div className="
-                         text-neutral-400 font-light font-montserrat text-justify  text-xs
-                        pt-4 px-14 lg:px-0
+                         text-neutral-400 font-light font-montserrat text-justify 
+                        text-xs md:text-base
+                        pt-4 px-14 lg:px-4
 
                     ">
                         <TypeAnimation

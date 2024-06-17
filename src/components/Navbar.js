@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-    const activeItem = (
+    const [activeItem, setActiveItem] = useState(
         localStorage.getItem('activeItem') || '/'
     );
 
@@ -9,17 +9,27 @@ const Navbar = () => {
 
     const [hidden, setHidden] = useState(true);
 
-    useEffect(() => {
-        localStorage.setItem('activeItem', location);
-        console.log(location);
-        console.log(activeItem);
-    })
+    const handleClick = (id) => {
+        setActiveItem(id);
+        localStorage.setItem('activeItem', id);
+    }
 
-    const isHighlight = () => {
+    const isHighlight = (item) => {
         const highlight = "text-neutral-200 border-neutral-400 border-b-2 py-1 font-bold"
         const unhighlight = "text-neutral-200 hover:text-neutral-400"
-        return activeItem === location ? highlight : unhighlight;
+        return activeItem === item ? highlight : unhighlight;
     }
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            localStorage.removeItem(activeItem);
+        }
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        }
+    });
 
     const DropdownMenu = () => {
         return <div className="p-4 right-0 absolute sm:hidden">
@@ -34,7 +44,7 @@ const Navbar = () => {
                 <div id="dropdownDots" className="absolute right-4 items-start z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-40 font-normal">
                     <ul className="py-2 text-sm font-montserrat text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
                         <li>
-                            <a href="/" className={activeItem === location ? "block px-4 py-2 text-neutral-800 font-semibold" : "block px-4 py-2 text-neutral-800 hover:text-neutral-300"}
+                            <a href="/" className={activeItem === "/" ? "block px-4 py-2 text-neutral-800 font-semibold" : "block px-4 py-2 text-neutral-800 hover:text-neutral-300"}
                                 onClick={() => console.log("Cliick: " + activeItem)}>
                                 About</a>
                         </li>
@@ -55,6 +65,8 @@ const Navbar = () => {
         </div>
     }
 
+
+
     return <header className="sticky top-0 z-40 w-full bg-violet-950 mx-auto text-neutral">
         <DropdownMenu />
         <div className="hidden sm:flex items-center justify-center w-full lg:px-60 py-4 z-50">
@@ -66,24 +78,29 @@ const Navbar = () => {
                 <ul className="flex flex-row lg:flex text-lg space-x-10">
                     <li>
                         <a href="/"
-                            className={isHighlight()}>
+                            onClick={() => handleClick("/")}
+                            className={isHighlight("/")}>
                             About
                         </a>
                     </li>
                     <li>
                         <a href="/experience"
-                            className={isHighlight()}>
+                            onClick={() => handleClick("/experience")}
+                            className={isHighlight("/experience")}>
                             Experience</a>
                     </li>
                     <li>
                         <a href="/work"
-                            className={isHighlight()}>
+                            onClick={() => handleClick("/work")}
+                            className={isHighlight("/work")}>
                             Work</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header >
+
+
 }
 
 export default Navbar
